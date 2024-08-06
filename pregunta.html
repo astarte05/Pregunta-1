@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me amarías si fuera un ternurin?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Me amarías si fuera un ternurin?</h1>
+        <button id="si">Sí</button>
+        <button id="no">No</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById("no");
+
+        noButton.addEventListener("mouseover", function() {
+            // Generar nuevas posiciones aleatorias dentro de la ventana del navegador
+            const newX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const newY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.left = `${newX}px`;
+            noButton.style.top = `${newY}px`;
+        });
+
+        document.getElementById("si").addEventListener("click", function() {
+            alert("¡Sabía que dirías que sí!");
+        });
+    </script>
+</body>
+</html>
